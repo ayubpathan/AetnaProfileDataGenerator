@@ -37,18 +37,17 @@ def post(host, input_json_file, v2=False):
     else:
         http_request(url, json_data, 'POST')
 
-
-cd .
 if __name__ == "__main__":
     #table_names = []
     v2 = False
     atlas_hosts = ["172.27.12.192",
                    "172.27.52.136"]
+    import sys
+    no_of_entities = int(sys.argv[1])
     #post(atlas_host, 'json_data/hive_table_with_42intCols_22strCols_27dateCols_9distCount.json')
-    for test in TestData.generate_input_data(5):
+    for test in TestData.generate_input_data(no_of_entities):
         data_gen = hive_table_profile_data_generator(test[0], test[1], test[2], test[3], test[4])
         filename, table_name = data_gen.constructHiveTableDef()
         for host in atlas_hosts:
             print "Hostname: " + host + " trying to create table with name: " + str(table_name) +" and file name is: " + str(filename)
             post(host, filename, v2)
-
