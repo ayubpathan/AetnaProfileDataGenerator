@@ -1,0 +1,292 @@
+[{
+	"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Reference",
+	"id": {
+		"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Id",
+		"id": "-533549211492572",
+		"version": 0,
+		"typeName": "hive_db",
+		"state": "ACTIVE"
+	},
+	"typeName": "hive_db",
+	"values": {
+		"name": "default",
+		"location": "hdfs://ctr-e83-1481604818073-7340-01-000005.hwx.site:8020/apps/hive/warehouse",
+		"description": "Default Hive database",
+		"ownerType": 2,
+		"qualifiedName": "default@cl1",
+		"owner": "public",
+		"clusterName": "cl1",
+		"parameters": {
+
+		}
+	},
+	"traitNames": [
+
+	],
+	"traits": {
+
+	}
+}, {
+	"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Reference",
+	"id": {
+		"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Id",
+		"id": "-533549211492571",
+		"version": 0,
+		"typeName": "hive_table",
+		"state": "ACTIVE"
+	},
+	"typeName": "hive_table",
+	"values": {
+		"tableType": "MANAGED_TABLE",
+		"name": "testtable",
+		"createTime": "2016-12-20T18:38:22.000Z",
+		"temporary": false,
+		"profileData": {
+			"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Struct",
+			"typeName": "hive_table_profile_data",
+			"values": {
+				"rowCount": 10000000
+			}
+		},
+		"db": {
+			"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Reference",
+			"id": {
+				"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Id",
+				"id": "-533549211492572",
+				"version": 0,
+				"typeName": "hive_db",
+				"state": "ACTIVE"
+			},
+			"typeName": "hive_db",
+			"values": {
+				"name": "default",
+				"location": "hdfs://ctr-e83-1481604818073-7340-01-000005.hwx.site:8020/apps/hive/warehouse",
+				"description": "Default Hive database",
+				"ownerType": 2,
+				"qualifiedName": "default@cl1",
+				"owner": "public",
+				"clusterName": "cl1",
+				"parameters": {
+
+				}
+			},
+			"traitNames": [
+
+			],
+			"traits": {
+
+			}
+		},
+		"retention": 0,
+		"qualifiedName": "default.testtable@cl1",
+		"columns": [{
+			"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Reference",
+			"id": {
+				"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Id",
+				"id": "-533549211492569",
+				"version": 0,
+				"typeName": "hive_column",
+				"state": "ACTIVE"
+			},
+			"typeName": "hive_column",
+			"values": {
+				"name": "id",
+				"qualifiedName": "default.testtable.id@cl1",
+				"owner": "hive",
+				"type": "int",
+				"table": {
+					"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Id",
+					"id": "-533549211492571",
+					"version": 0,
+					"typeName": "hive_table",
+					"state": "ACTIVE"
+				},
+				"profileData": {
+					"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Struct",
+					"typeName": "hive_column_profile_data",
+					"values": {
+						"nonNullData": 100,
+						"cardinality": 85000,
+						"minValue": 1,
+						"maxValue": 85001,
+						"meanValue": 10000000,
+						"medianValue": 10000000,
+						"distributionType": "decile-frequency",
+						"distributionData": "{ \"1-10000\": 1000, \"10001-20000\": 1100, \"20001-30000\": 1200, \"30001-40000\": 1300, \"40001-50000\": 1400, \"50001-60000\": 1500, \"60001-70000\": 1600,\"70001-80000\": 1700, \"80001-90000\": 1900,\"90001-100000\": 2000 }",
+						"distributionKeyOrder": [
+							"1-10000",
+							"10001-20000",
+							"20001-30000",
+							"30001-40000",
+							"40001-50000",
+							"50001-60000",
+							"60001-70000",
+							"70001-80000",
+							"80001-90000",
+							"90001-100000"
+						]
+					}
+				}
+			},
+			"traitNames": [
+
+			],
+			"traits": {
+
+			}
+		},
+          {
+			"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Reference",
+			"id": {
+				"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Id",
+				"id": "-533549211492568",
+				"version": 0,
+				"typeName": "hive_column",
+				"state": "ACTIVE"
+			},
+			"typeName": "hive_column",
+			"values": {
+				"name": "name",
+				"qualifiedName": "default.testtable.name@cl1",
+				"owner": "hive",
+				"type": "string",
+				"table": {
+					"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Id",
+					"id": "-533549211492571",
+					"version": 0,
+					"typeName": "hive_table",
+					"state": "ACTIVE"
+				},
+				"profileData": {
+					"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Struct",
+					"typeName": "hive_column_profile_data",
+					"values": {
+						"nonNullData": 100,
+						"cardinality": 5,
+						"maxLength": 10,
+						"averageLength": 8,
+						"distributionType": "count-frequency",
+						"distributionData": "{ \"ACTIVE\": 1000, \"DELETED\": 100, \"INACTIVE\": 600, \"PENDING\": 200, \"IN_PROGRESS\": 400 }",
+						"distributionKeyOrder": [
+							"ACTIVE",
+							"DELETED",
+							"INACTIVE",
+							"PENDING",
+							"IN_PROGRESS"
+						]
+					}
+				}
+			},
+			"traitNames": [
+
+			],
+			"traits": {
+
+			}
+		},
+          {
+			"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Reference",
+			"id": {
+				"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Id",
+				"id": "-533549211492567",
+				"version": 0,
+				"typeName": "hive_column",
+				"state": "ACTIVE"
+			},
+			"typeName": "hive_column",
+			"values": {
+				"name": "dateofbirth",
+				"qualifiedName": "default.testtable.dateofbirth@cl1",
+				"owner": "hive",
+				"type": "date",
+				"table": {
+					"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Id",
+					"id": "-533549211492571",
+					"version": 0,
+					"typeName": "hive_table",
+					"state": "ACTIVE"
+				},
+				"profileData": {
+					"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Struct",
+					"typeName": "hive_column_profile_data",
+					"values": {
+						"nonNullData": 100,
+						"distributionType": "annual",
+						"distributionData": "{ \"2010:count\": 780,\"2010:1\": 10,\"2010:2\": 20,\"2010:3\": 30,\"2010:4\": 40,\"2010:5\": 50,\"2010:6\": 60,\"2010:7\": 70,\"2010:8\": 80,\"2010:9\": 90,\"2010:10\": 100,\"2010:11\": 110,\"2010:12\": 120,\"2011:count\": 780,\"2011:1\": 120,\"2011:2\": 110,\"2011:3\": 100,\"2011:4\": 90,\"2011:5\": 80,\"2011:6\": 70,\"2011:7\": 60,\"2011:8\": 50,\"2011:9\": 40,\"2011:10\": 30,\"2011:11\": 20,\"2011:12\": 10,\"2012:count\": 900,\"2012:1\": 130,\"2012:2\": 30,\"2012:3\": 110,\"2012:4\": 50,\"2012:5\": 90,\"2012:6\": 70,\"2012:7\": 80,\"2012:8\": 60,\"2012:9\": 100,\"2012:10\": 40,\"2012:11\": 120,\"2012:12\": 20 }"
+					}
+				}
+			},
+			"traitNames": [
+
+			],
+			"traits": {
+
+			}
+		}],
+		"lastAccessTime": "2016-12-20T18:38:22.000Z",
+		"owner": "hive",
+		"sd": {
+			"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Reference",
+			"id": {
+				"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Id",
+				"id": "-533549211492570",
+				"version": 0,
+				"typeName": "hive_storagedesc",
+				"state": "ACTIVE"
+			},
+			"typeName": "hive_storagedesc",
+			"values": {
+				"location": "hdfs://ctr-e83-1481604818073-7340-01-000005.hwx.site:8020/apps/hive/warehouse/testtable",
+				"serdeInfo": {
+					"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Struct",
+					"typeName": "hive_serde",
+					"values": {
+						"serializationLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+						"parameters": {
+							"serialization.format": "1"
+						}
+					}
+				},
+				"qualifiedName": "default.testtable@cl1_storage",
+				"outputFormat": "org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat",
+				"compressed": false,
+				"numBuckets": -1,
+				"inputFormat": "org.apache.hadoop.mapred.TextInputFormat",
+				"parameters": {
+
+				},
+				"storedAsSubDirectories": false,
+				"table": {
+					"jsonClass": "org.apache.atlas.typesystem.json.InstanceSerialization$_Id",
+					"id": "-533549211492571",
+					"version": 0,
+					"typeName": "hive_table",
+					"state": "ACTIVE"
+				}
+			},
+			"traitNames": [
+
+			],
+			"traits": {
+
+			}
+		},
+		"parameters": {
+			"rawDataSize": "0",
+			"numFiles": "0",
+			"transient_lastDdlTime": "1482259102",
+			"totalSize": "0",
+			"COLUMN_STATS_ACCURATE": "{\"BASIC_STATS\":\"true\"}",
+			"numRows": "0"
+		},
+		"partitionKeys": [
+
+		]
+	},
+	"traitNames": [
+
+	],
+	"traits": {
+
+	}
+}]
