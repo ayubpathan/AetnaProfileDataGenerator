@@ -19,19 +19,6 @@ class hive_table_profile_data_generator():
         self.hive_string_columns = hive_string_columns
         self.hive_date_columns = hive_date_columns
         self.dist_val_count = dist_val_count
-        '''
-        hive_table_name = sys.argv[1]
-        hive_int_columns = sys.argv[2]
-        hive_string_columns = sys.argv[3]
-        hive_date_columns = sys.argv[4]
-        dist_val_count = int(sys.argv[5])
-
-        hive_table_name = 'dataprofile_testtable' + str(randint(1,1000)) + id_generator()
-        hive_int_columns = int(sys.argv[1])
-        hive_string_columns = int(sys.argv[2])
-        hive_date_columns = int(sys.argv[3])
-        dist_val_count = int(sys.argv[4])
-        '''
         self.table_file_name = 'json_data/' + "hive_table_with_" + str(hive_int_columns) + "intCols_" + \
                           str(hive_string_columns) + "strCols_" + \
                           str(hive_date_columns) + "dateCols_" + \

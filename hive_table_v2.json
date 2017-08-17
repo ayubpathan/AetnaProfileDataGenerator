@@ -1,0 +1,165 @@
+{
+    "entity": {
+        "attributes": {
+            "aliases": null,
+            "columns": [
+                {
+                    "guid": "-38802974-ee9f-4c18-98dd-79cb056e1587",
+                    "typeName": "hive_column"
+                }
+            ],
+            "comment": null,
+            "createTime": 1502866779000,
+            "db": {
+                "guid": "-f4a08ff9-8cb6-4350-bb9e-38258a7074bb",
+                "typeName": "hive_db"
+            },
+            "description": null,
+            "lastAccessTime": 1502866779000,
+            "name": "atlas_regression_gpteqliwxn",
+            "owner": "hrt_qa",
+            "parameters": {
+                "COLUMN_STATS_ACCURATE": "{\"BASIC_STATS\":\"true\"}",
+                "numFiles": "0",
+                "numRows": "0",
+                "rawDataSize": "0",
+                "totalSize": "0",
+                "transient_lastDdlTime": "1502866779"
+            },
+            "partitionKeys": null,
+            "profileData": {
+                "attributes": {
+                    "rowCount": 10000000
+                },
+                "typeName": "hive_table_profile_data"
+            },
+            "qualifiedName": "default.atlas_regression_gpteqliwxn@cl1",
+            "retention": 0,
+            "sd": {
+                "guid": "-e1121280-4a68-479b-be78-ec19a9e5bff7",
+                "typeName": "hive_storagedesc"
+            },
+            "tableType": "MANAGED_TABLE",
+            "temporary": false,
+            "viewExpandedText": null,
+            "viewOriginalText": null
+        },
+        "classifications": [],
+        "createTime": 1502866783382,
+        "createdBy": "hrt_qa",
+        "guid": "-6b2d1a2b-d0fa-43d6-803a-0114abdf0a15",
+        "status": "ACTIVE",
+        "typeName": "hive_table",
+        "updateTime": 1502866783382,
+        "updatedBy": "hrt_qa",
+        "version": 0
+    },
+    "referredEntities": {
+        "-38802974-ee9f-4c18-98dd-79cb056e1587": {
+            "attributes": {
+                "comment": null,
+                "description": null,
+                "name": "id",
+                "owner": "hrt_qa",
+                "position": 0,
+                "profileData": {
+                    "attributes": {
+                        "cardinality": 85000,
+                        "distributionData": "{ \"1-10000\": 1000, \"10001-20000\": 1100, \"20001-30000\": 1200, \"30001-40000\": 1300, \"40001-50000\": 1400, \"50001-60000\": 1500, \"60001-70000\": 1600,\"70001-80000\": 1700, \"80001-90000\": 1900,\"90001-100000\": 2000 }",
+                        "distributionKeyOrder": [
+                            "1-10000",
+                            "10001-20000",
+                            "20001-30000",
+                            "30001-40000",
+                            "40001-50000",
+                            "50001-60000",
+                            "60001-70000",
+                            "70001-80000",
+                            "80001-90000",
+                            "90001-100000"
+                        ],
+                        "distributionType": "decile-frequency",
+                        "maxValue": 85001,
+                        "meanValue": 10000000,
+                        "medianValue": 10000000,
+                        "minValue": 1,
+                        "nonNullData": 100
+                    },
+                    "typeName": "hive_column_profile_data"
+                },
+                "qualifiedName": "default.atlas_regression_gpteqliwxn.id@cl1",
+                "table": {
+                    "guid": "-6b2d1a2b-d0fa-43d6-803a-0114abdf0a15",
+                    "typeName": "hive_table"
+                },
+                "type": "int"
+            },
+            "classifications": [],
+            "createTime": 1502866783382,
+            "createdBy": "hrt_qa",
+            "guid": "-38802974-ee9f-4c18-98dd-79cb056e1587",
+            "status": "ACTIVE",
+            "typeName": "hive_column",
+            "updateTime": 1502866783382,
+            "updatedBy": "hrt_qa",
+            "version": 0
+        },
+        "-e1121280-4a68-479b-be78-ec19a9e5bff7": {
+            "attributes": {
+                "bucketCols": null,
+                "compressed": false,
+                "inputFormat": "org.apache.hadoop.mapred.TextInputFormat",
+                "location": "hdfs://ctr-e134-1499953498516-100980-01-000006.hwx.site:8020/apps/hive/warehouse/atlas_regression_gpteqliwxn",
+                "numBuckets": -1,
+                "outputFormat": "org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat",
+                "parameters": null,
+                "qualifiedName": "default.atlas_regression_gpteqliwxn@cl1_storage",
+                "serdeInfo": {
+                    "attributes": {
+                        "name": null,
+                        "parameters": {
+                            "serialization.format": "1"
+                        },
+                        "serializationLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe"
+                    },
+                    "typeName": "hive_serde"
+                },
+                "sortCols": null,
+                "storedAsSubDirectories": false,
+                "table": {
+                    "guid": "-6b2d1a2b-d0fa-43d6-803a-0114abdf0a15",
+                    "typeName": "hive_table"
+                }
+            },
+            "classifications": [],
+            "createTime": 1502866783382,
+            "createdBy": "hrt_qa",
+            "guid": "-e1121280-4a68-479b-be78-ec19a9e5bff7",
+            "status": "ACTIVE",
+            "typeName": "hive_storagedesc",
+            "updateTime": 1502866783382,
+            "updatedBy": "hrt_qa",
+            "version": 0
+        },
+        "-f4a08ff9-8cb6-4350-bb9e-38258a7074bb": {
+            "attributes": {
+                "clusterName": "cl1",
+                "description": "Default Hive database",
+                "location": "hdfs://ctr-e83-1481604818073-7340-01-000005.hwx.site:8020/apps/hive/warehouse",
+                "name": "default",
+                "owner": "public",
+                "ownerType": "ROLE",
+                "parameters": null,
+                "qualifiedName": "default@cl1"
+            },
+            "classifications": [],
+            "createTime": 1502865866396,
+            "guid": "-f4a08ff9-8cb6-4350-bb9e-38258a7074bb",
+            "status": "ACTIVE",
+            "typeName": "hive_db",
+            "updateTime": 1502883033204,
+            "updatedBy": "admin",
+            "version": 0
+        }
+    }
+}

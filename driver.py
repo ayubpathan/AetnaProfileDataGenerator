@@ -2,6 +2,7 @@ import requests
 from requests.auth import HTTPBasicAuth
 import json
 from GenerateFullHiveTable import hive_table_profile_data_generator
+from GenerateFullHiveTableV2 import hive_table_profile_data_generator_v2
 from testData import TestData
 
 
@@ -18,7 +19,8 @@ def http_request(url, body, method):
                                     verify=False,
                                     json=body)
         status = response.status_code
-        assert status == 201, "entity creation failed"
+        print "status : " + str(status)
+        assert ( status == 201 or status == 200 ), "entity creation failed"
         if status != 204:
             response_body = response.json()
     except requests.exceptions.RequestException as e:
@@ -33,21 +35,20 @@ def post(host, input_json_file, v2=False):
         json_data = json.loads(open(input_json_file).read())
     if v2:
         url = 'http://' + host + ':21000/api/atlas/v2/entity'
-        http_request(url, json_data[0], 'POST')
-    else:
-        http_request(url, json_data, 'POST')
+    http_request(url, json_data, 'POST')
+
 
 if __name__ == "__main__":
-    #table_names = []
-    v2 = False
-    atlas_hosts = ["172.27.12.192",
-                   "172.27.52.136"]
     import sys
-    no_of_entities = int(sys.argv[1])
-    #post(atlas_host, 'json_data/hive_table_with_42intCols_22strCols_27dateCols_9distCount.json')
+    atlas_host = sys.argv[1]
+    no_of_entities = int(sys.argv[2])
+    is_v2 = True if sys.argv[3].lower() == 'true' else False
     for test in TestData.generate_input_data(no_of_entities):
-        data_gen = hive_table_profile_data_generator(test[0], test[1], test[2], test[3], test[4])
+        if is_v2:
+            data_gen = hive_table_profile_data_generator_v2(test[0], test[1], test[2], test[3], test[4])
+        else:
+            data_gen = hive_table_profile_data_generator(test[0], test[1], test[2], test[3], test[4])
         filename, table_name = data_gen.constructHiveTableDef()
-        for host in atlas_hosts:
-            print "Hostname: " + host + " trying to create table with name: " + str(table_name) +" and file name is: " + str(filename)
-            post(host, filename, v2)
+        print "Hostname: " + host + " trying to create table with name: " + str(table_name) +" and file name is: " + str(filename)
+        post(atlas_host, filename, is_v2)
+
